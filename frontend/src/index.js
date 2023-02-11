@@ -7,11 +7,25 @@ import {
   BrowserRouter
  
 } from 'react-router-dom';
+
+
+import {positions,transitions,Provider as AlertProvider} from 'react-alert'
+import  alertTemplate  from 'react-alert-template-basic';
+
+const options={
+  timeout:5000,
+  position:positions.TOP_CENTER,
+  transitions:transitions.SCALE
+}
 const root = ReactDOM.createRoot(document.getElementById("root"))
 root.render(
   <Provider store={store}>
    <BrowserRouter>
+   <AlertProvider template={alertTemplate} {...options}>
    <App />
+
+   </AlertProvider>
+  
    </BrowserRouter>
     
     </Provider>
