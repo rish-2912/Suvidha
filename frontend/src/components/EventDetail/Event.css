@@ -1,0 +1,17 @@
+.event-container{
+    margin:auto;
+    margin-top:100px;
+    width:80%
+}
+.event-image{
+    padding-right: 20px;
+}
+.event-tags{
+   margin-right:30px;
+   margin-top:30px;
+   margin-bottom:30px;
+}
+
+.container-card{
+    margin-top: 180px;
+}
