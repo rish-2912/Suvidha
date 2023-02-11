@@ -61,7 +61,7 @@ module.exports.userRegister = (req, res) => {
           email,
         });
         if (checkUser) {
-          res.status(404).json({
+          res.status(400).json({
             error: {
               errorMessage: ["Your email already exist"],
             },
