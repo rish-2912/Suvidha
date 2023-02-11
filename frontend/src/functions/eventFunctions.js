@@ -1,9 +1,9 @@
 import { BASE_URL } from "."
+import axios from "axios"
 
-
-const headers={
-    "Content-type":"application/json"
-}
+// const headers={
+//     "Content-type":"application/json"
+// }
 
 export const getAllEvents=async()=>{
     try {
@@ -46,7 +46,7 @@ export const CreateEvent =async(body)=>{
     
     try {
         
-        const response = axios.post(BASE_URL + "/event/CreateEvent",body,{headers})
+        const response = axios.post(BASE_URL + "/event/CreateEvent",body)
 
         return response
 
@@ -63,7 +63,7 @@ export const AttendEvent =async(idofevent,body)=>{
     
     try {
         
-        const response = axios.post(BASE_URL + "/event/AttendEvent" + idofevent ,body,{headers})
+        const response = axios.post(BASE_URL + "/event/AttendEvent" + idofevent ,body)
 
         return response
 
@@ -78,7 +78,7 @@ export const UpdateEvent =async(body)=>{
     // pass any argument in body to change
     try {
         
-        const response = axios.post(BASE_URL + "/event/UpdateEvent",body,{headers})
+        const response = axios.post(BASE_URL + "/event/UpdateEvent",body)
 
         return response
 

@@ -19,11 +19,18 @@ const EventSchema = mongoose.Schema({
         ref:"user"
     },
     address:String,
+    state:String,
+    city:String,
+
+    category:{
+        type:String
+    },
 
     Link:{
         type:String,
         default:""
     },
+    image:String,
 
     Attendees:[{
         type:mongoose.Schema.Types.ObjectId,

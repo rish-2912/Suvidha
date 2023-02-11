@@ -1,5 +1,6 @@
 const Donation = require("../models/donations.model")
-
+const formidable = require("formidable");
+const fs =require("fs")
 
 exports.AllDonations=async(req,res)=>{
     try {
@@ -42,31 +43,51 @@ exports.MyDonations=async(req,res)=>{
 }
 
 exports.CreateDonation=async(req,res)=>{
+    const form = formidable();
     try {
-        const {
-            name,
-            description,
-            targetAmount,
-            user,
-            EventId,
-            hasEvent
-        } = req.body
+        form.parse(req, async (err, fields, files) => {
+            const {
+                name,
+                description,
+                targetAmount,
+                user_id,
+                category
+            } = fields
 
-        const donation = new Donation({
-            name,
-            description,
-            targetAmount,
-            CreatedBy:user._id,
-            EventId,
-            hasEvent
+            const { image }=files
+                // console.log(image)
+
+            const getImageName = files.image.originalFilename;
+
+            const randomNumber = Math.floor(Math.random() * 9999);
+            const newImageName = randomNumber + getImageName;
+            files.image.originalFilename = newImageName;
+            const newPath =
+                __dirname +
+                `../../../frontend/public/images/${files.image.originalFilename}`;
+
+            fs.copyFile(files.image.filepath, newPath, async (error) => {
+                if(!error){
+
+                    const donation = new Donation({
+                        name,
+                        description,
+                        targetAmount,
+                        CreatedBy:user_id,
+                        category,
+                        image:files.image.originalFilename
+                    })
+
+                    await donation.save()
+
+                    return res.status(200).json({
+                        success:true,
+                        data:"Donation created"
+                    })
+                }
+            })
         })
-
-        await donation.save()
-
-        return res.status(200).json({
-            success:true,
-            data:"Donation created"
-        })
+        
 
 
     } catch (error) {
@@ -98,6 +119,9 @@ exports.AddDonation=async(req,res)=>{
             donation.completed=true
         }
         donation.donatedAmount += Amount
+        if(!donation.donors.includes(req.params.id)){
+            donation.donors.push(req.params.id)
+        }
 
         await donation.save()
 
