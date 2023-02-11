@@ -10,7 +10,6 @@ import Home from "../home/Home"
 import Footer from "../common/footer/Footer"
 import About from "../about/About"
 
-import Blog from "../blog/Blog"
 
 import Contact from "../contact/Contact"
 import Login from "../Login/Login"
@@ -22,6 +21,8 @@ import DetailCategories from "../categories/DetailCategories";
 import DetailEvents from "../events/DetailEvents";
 import DonateDetail from "../DonateDetail/DonateDetails";
 import EventDetail from "../EventDetail/EventDetail";
+import News from "../news/News";
+import NewsCard from "../news/NewsCard";
 
 const Pages = () => {
 
@@ -41,6 +42,8 @@ const Pages = () => {
         <Route exact path='/eventdetail' element={<EventDetail />} />
         <Route exact path='/morecategory' element={<DetailCategories />} />
         <Route exact path='/moreevent' element={<DetailEvents />} />
+        <Route exact path='/news' element={<News />} />
+        <Route exact path='/news/:category' element={<NewsCard />} />
         {/* <Route exact path='/about' component={About} />
        
           <Route exact path='/' element={<Landing/>} />
