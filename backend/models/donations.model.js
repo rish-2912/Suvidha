@@ -2,7 +2,12 @@ const mongoose = require("mongoose");
 
 const DonationSchema = mongoose.Schema({
     name:String,
-    description:String,    
+    description:String,
+    category:{
+        type:String,
+        default:'Donation'
+    },
+
     StartDate:{
         type:String,
         default:Date.now(),

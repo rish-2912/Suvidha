@@ -2,7 +2,13 @@ const mongoose = require("mongoose");
 
 const EventSchema = mongoose.Schema({
     name:String,
-    description:String,    
+    description:String, 
+    
+    category:{
+        type:String,
+        default:'event'
+    },
+
     CreatedOn:{
         type:String,
         default:Date.now(),
