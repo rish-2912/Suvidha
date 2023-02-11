@@ -24,9 +24,9 @@ const Landing = () => {
             }}>
                 <Header />
                 <Items />
-                <div style={{ width: '768px', height: '45px', boxShadow: '0 5px 10px -5px', borderRadius: '12px', textAlign: 'center', margin: '2rem auto', position: 'relative', zIndex: '100', background: 'white', border: '1px solid blue' }}>
+                {/* <div style={{ width: '768px', height: '45px', boxShadow: '0 5px 10px -5px', borderRadius: '12px', textAlign: 'center', margin: '2rem auto', position: 'relative', zIndex: '100', background: 'white', border: '1px solid blue' }}>
                     <Search style={{}} />
-                </div>
+                </div> */}
                 <Categories />
                 <Events />
                 {/* <Working /> */}

@@ -15,47 +15,67 @@ import WomanIcon from '@mui/icons-material/Woman';
 import MedicalServicesIcon from '@mui/icons-material/MedicalServices';
 import FloodIcon from '@mui/icons-material/Flood';
 // import './category.css'
-const categories = [
-    <Box style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '0 10px' }}>
-        <LayersIcon style={{ fontSize: '18px' }} />
-        <Typography style={{ fontSize: '13px', fontFamily: 'Poppins', fontWeight: 'bold' }} >All</Typography>
-    </Box>,
-    <Box style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '0 10px' }}>
-        <PetsIcon style={{ fontSize: '18px' }} />
-        <Typography style={{ fontSize: '13px', fontFamily: 'Poppins', fontWeight: 'bold' }} >Animals</Typography>
-    </Box>,
-    <Box style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '0 10px' }}>
-        <ChildFriendlyIcon style={{ fontSize: '18px' }} />
-        <Typography style={{ fontSize: '13px', fontFamily: 'Poppins', fontWeight: 'bold' }} >Children</Typography>
-    </Box>,
-    <Box style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '0 10px' }}>
-        <ElderlyIcon style={{ fontSize: '18px' }} />
-        <Typography style={{ fontSize: '13px', fontFamily: 'Poppins', fontWeight: 'bold' }} >Elderly</Typography>
-    </Box>,
-    <Box style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '0 10px' }}>
-        <AssistWalkerIcon style={{ fontSize: '18px' }} />
-        <Typography style={{ fontSize: '13px', fontFamily: 'Poppins', fontWeight: 'bold' }} >Disablility</Typography>
-    </Box>,
-    <Box style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '0 10px' }}>
-        <RestaurantIcon style={{ fontSize: '18px' }} />
-        <Typography style={{ fontSize: '13px', fontFamily: 'Poppins', fontWeight: 'bold' }} >Hunger</Typography>
-    </Box>,
-    <Box style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '0 10px' }}>
-        <WomanIcon style={{ fontSize: '18px' }} />
-        <Typography style={{ fontSize: '13px', fontFamily: 'Poppins', fontWeight: 'bold' }} >Women</Typography>
-    </Box>,
-    <Box style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '0 10px' }}>
-        < SchoolIcon style={{ fontSize: '18px' }} />
-        <Typography style={{ fontSize: '13px', fontFamily: 'Poppins', fontWeight: 'bold' }} >Education</Typography>
-    </Box>,
-    <Box style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '0 10px' }}>
-        <MedicalServicesIcon style={{ fontSize: '18px' }} />
-        <Typography style={{ fontSize: '13px', fontFamily: 'Poppins', fontWeight: 'bold' }} >Medical</Typography>
-    </Box>,
-    <Box style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '0 10px' }}>
-        <FloodIcon style={{ fontSize: '18px' }} />
-        <Typography style={{ fontSize: '13px', fontFamily: 'Poppins', fontWeight: 'bold' }} >Disaster Relief</Typography>
-    </Box>
+const categories = [["All",
+        <Box style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '0 10px' }}>
+            <LayersIcon style={{ fontSize: '18px' }} />
+            <Typography style={{ fontSize: '13px', fontFamily: 'Poppins', fontWeight: 'bold' }} >All</Typography>
+        </Box>
+    ],
+    ["Animals",
+        <Box style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '0 10px' }}>
+            <PetsIcon style={{ fontSize: '18px' }} />
+            <Typography style={{ fontSize: '13px', fontFamily: 'Poppins', fontWeight: 'bold' }} >Animals</Typography>
+        </Box>
+    ],
+    ["Children",
+        <Box style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '0 10px' }}>
+            <ChildFriendlyIcon style={{ fontSize: '18px' }} />
+            <Typography style={{ fontSize: '13px', fontFamily: 'Poppins', fontWeight: 'bold' }} >Children</Typography>
+        </Box>
+    ],
+    ["Elderly",
+        <Box style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '0 10px' }}>
+            <ElderlyIcon style={{ fontSize: '18px' }} />
+            <Typography style={{ fontSize: '13px', fontFamily: 'Poppins', fontWeight: 'bold' }} >Elderly</Typography>
+        </Box>
+    ],
+    ["Disablility",
+        <Box style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '0 10px' }}>
+            <AssistWalkerIcon style={{ fontSize: '18px' }} />
+            <Typography style={{ fontSize: '13px', fontFamily: 'Poppins', fontWeight: 'bold' }} >Disablility</Typography>
+        </Box>
+    ],
+    ["Hunger",
+        <Box style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '0 10px' }}>
+            <RestaurantIcon style={{ fontSize: '18px' }} />
+            <Typography style={{ fontSize: '13px', fontFamily: 'Poppins', fontWeight: 'bold' }} >Hunger</Typography>
+        </Box>
+    ],
+    ["Women",
+        <Box style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '0 10px' }}>
+            <WomanIcon style={{ fontSize: '18px' }} />
+            <Typography style={{ fontSize: '13px', fontFamily: 'Poppins', fontWeight: 'bold' }} >Women</Typography>
+        </Box>
+    ],
+    ["Education",
+        <Box style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '0 10px' }}>
+            < SchoolIcon style={{ fontSize: '18px' }} />
+            <Typography style={{ fontSize: '13px', fontFamily: 'Poppins', fontWeight: 'bold' }} >Education</Typography>
+        </Box>
+    ],
+    ["Medical",
+        <Box style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '0 10px' }}>
+            <MedicalServicesIcon style={{ fontSize: '18px' }} />
+            <Typography style={{ fontSize: '13px', fontFamily: 'Poppins', fontWeight: 'bold' }} >Medical</Typography>
+        </Box>,
+    ],
+    ["Medical",
+        <Box style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '0 10px' }}>
+            <FloodIcon style={{ fontSize: '18px' }} />
+            <Typography style={{ fontSize: '13px', fontFamily: 'Poppins', fontWeight: 'bold' }} >Disaster Relief</Typography>
+        </Box>
+    ],
+    
 ]
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -89,7 +109,7 @@ function a11yProps(index) {
     };
 }
 
-export default function BasicTabs() {
+export default function BasicTabs({handleClick}) {
     const [value, setValue] = React.useState(0);
 
     const handleChange = (event, newValue) => {
@@ -101,7 +121,7 @@ export default function BasicTabs() {
             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                 <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
                     {categories.map((category, idx) => {
-                        return <Tab key={idx} label={category} {...a11yProps(idx)} />
+                        return <Tab key={idx} label={category[1]} {...a11yProps(idx)} onClick={()=>handleClick(category[0])}/>
                     })}
                 </Tabs>
             </Box>

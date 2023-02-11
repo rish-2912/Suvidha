@@ -63,26 +63,15 @@ const items = [
 
 
 
-const DetailItems = () => {
+const DetailItems = ({ item }) => {
 
-    const [item, setitem] = useState([])
-    const fetchevents=async()=>{
-        const x = await getAllEvents()
-        if(x?.data?.success){
-            console.log(x)
-            setitem(x.data.data)
-        }
-    }
     
-    useEffect(() => {
-        fetchevents()
-    }, [])
     
 
 
     return (
         <>
-            {item.map((item) => {
+            {  item && item.map((item) => {
                 const percentage = `${((Number(item.raised)) / Number((+item.needed))) * 100}%`
                 console.log(percentage)
                 return (
