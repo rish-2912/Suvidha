@@ -1,6 +1,6 @@
 const formidable = require("formidable");
 const validator = require("validator");
-const registerModel = require("../model/authModel");
+const registerModel = require("../models/auth.model");
 const fs = require("fs");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
@@ -13,6 +13,9 @@ module.exports.userRegister = (req, res) => {
     const { userName, email, password, confirmPassword,role } = fields;
 
     const { image } = files;
+    console.log(fields)
+    console.log(files)
+    console.log(process.env.SECRET)
 
     const error = [];
 
@@ -54,7 +57,7 @@ module.exports.userRegister = (req, res) => {
       files.image.originalFilename = newImageName;
       const newPath =
         __dirname +
-        `../../../frontend/public/image/${files.image.originalFilename}`;
+        `../../../frontend/public/images/${files.image.originalFilename}`;
 
       try {
         const checkUser = await registerModel.findOne({
@@ -68,6 +71,7 @@ module.exports.userRegister = (req, res) => {
           });
         } else {
           fs.copyFile(files.image.filepath, newPath, async (error) => {
+            console.log(error)
             
             if (!error) {
               const userCreate = await registerModel.create({
@@ -88,13 +92,13 @@ module.exports.userRegister = (req, res) => {
                   role:userCreate.role,
                   registerTime: userCreate.createdAt,
                 },
-                process.env.SECRET,
+                'ASDFGHJKL',
                 {
-                  expiresIn: process.env.TOKEN_EXP,
+                  expiresIn:'7d'
                 }
               );
 
-              const options = { expires : new Date(Date.now() + process.env.COOKIE_EXP * 24 * 60 * 60 * 1000 )}
+              const options = { expires : new Date(Date.now() + 7 * 24 * 60 * 60 * 1000 )}
               res.status(201).cookie("authToken", token, options).json({
                 successMessage: "Your Register Succesful",
                 token,
@@ -109,6 +113,7 @@ module.exports.userRegister = (req, res) => {
           });
         }
       } catch (error) {
+        console.log(error)
         res.status(500).json({
           error: {
             errorMessage: ["Internal server error"],
@@ -156,16 +161,17 @@ module.exports.userLogin=async(req,res)=>{
                   email: checkUser.email,
                   userName: checkUser.userName,
                   image: checkUser.image,
-                  role:userCreate.role,
+                  role:checkUser.role,
                   registerTime: checkUser.createdAt,
                 },
-                process.env.SECRET,
+                'ASDFGHJKL',
+                
                 {
-                  expiresIn: process.env.TOKEN_EXP,
+                  expiresIn: '7d',
                 }
               );
 
-              const options = { expires : new Date(Date.now() + process.env.COOKIE_EXP * 24 * 60 * 60 * 1000 ),httpOnly:true}
+              const options = { expires : new Date(Date.now() + 7 * 24 * 60 * 60 * 1000 ),httpOnly:true}
               res.status(201).cookie("authToken", token, options).json({
                 successMessage: "Your Login Successful",
                 token,
@@ -190,6 +196,7 @@ module.exports.userLogin=async(req,res)=>{
 
 
     }catch(error){
+      console.log(error)
 
       res.status(500).json({
         error: {

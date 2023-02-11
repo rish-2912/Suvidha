@@ -15,6 +15,7 @@ import Blog from "../blog/Blog"
 import Contact from "../contact/Contact"
 import Login from "../Login/Login"
 import Signup from "../Signup/Signup"
+import Landing from "../Landing/Landing";
 
 const Pages = () => {
   return (
@@ -22,7 +23,7 @@ const Pages = () => {
       <Routes>
         {/* <Header /> */}
         
-          <Route exact path='/' element={<Home/>} />
+          <Route exact path='/' element={<Landing/>} />
           <Route exact path='/login' element={<Login/>} />
           <Route exact path='/Signup' element={<Signup/>} />
           {/* <Route exact path='/about' component={About} />

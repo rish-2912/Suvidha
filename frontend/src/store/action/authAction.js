@@ -1,10 +1,11 @@
 import axios from 'axios';
-import { REGISTER_FAIL,REGISTER_SUCCESS,USER_LOGIN_FAIL,USER_LOGIN_SUCCESS } from '../type/authType';
+import { REGISTER_FAIL,REGISTER_SUCCESS,USER_LOGIN_FAIL,USER_LOGIN_SUCCESS } from "../../store/type/authType";
+ const BASE_URL="http://localhost:5000"
 export const userRegister=(data)=>async(dispatch)=>{
   
    
    try{
-    const response=await axios.post('/api/messenger/user-register',data)
+    const response=await axios.post(BASE_URL+'/user/register',data)
      localStorage.setItem('authToken',response.data.token)
 
      dispatch({
@@ -33,7 +34,7 @@ export const userLogin=(data)=>async(dispatch)=>{
    
   try{
 
-   const response=await axios.post('/api/messenger/user-login',data)
+   const response=await axios.post(BASE_URL+'/user/login',data)
     localStorage.setItem('authToken',response.data.token)
 
     dispatch({

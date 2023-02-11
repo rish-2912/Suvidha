@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect} from "react";
 
 import { Link,useNavigate } from "react-router-dom";
 import {useDispatch,useSelector} from 'react-redux'
@@ -13,6 +13,9 @@ import {
   MenuItem,
 } from "@material-ui/core";
 import "./Signup.css";
+import { useAlert } from "react-alert";
+
+import { ERROR_CLEAR, SUCESS_MESSAGE_CLEAR } from "../../store/type/authType";
 const Signup = () => {
 
 
@@ -23,7 +26,7 @@ const Signup = () => {
 
 
   const dispatch=useDispatch()
-
+  const {loading,authenticate,error,successMessage,myInfo}=useSelector(state=>state.auth) 
 
   const [state,setState]=useState({
     userName:'',
@@ -72,11 +75,26 @@ const [loadImage,setLoadImage]=useState('')
     formData.append('confirmPassword',confirmPassword);
     formData.append('role',role)
     formData.append('image',image);
-    console.log(formData)
-    // dispatch(userRegister(formData));
+
+    dispatch(userRegister(formData));
 
    
   }
+
+  useEffect(()=>{
+    if(authenticate){
+      navigate('/')
+    }
+    if(successMessage){
+     
+      dispatch({type:SUCESS_MESSAGE_CLEAR})
+    }
+    if(error){
+      
+      dispatch({type:ERROR_CLEAR})
+    }
+  // eslint-disable-next-line
+  },[successMessage,error]) 
 
 
 
