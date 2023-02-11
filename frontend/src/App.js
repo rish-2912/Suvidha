@@ -3,7 +3,8 @@ import Landing from "./components/Landing/Landing"
 import Pages from "./components/pages/Pages"
 
 function App() {
-  return <Landing />
+
+  return <Pages/>
 }
 
 export default App

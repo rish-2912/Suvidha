@@ -4,6 +4,11 @@ const cors = require("cors")
 const morgan = require("morgan");
 const connectDB = require("./connectDB"); 
 
+const dotenv = require('dotenv')
+
+
+
+console.log(process.env.SECRET)
 
 const main=()=>{
     connectDB()
@@ -21,11 +26,14 @@ app.use(express.json({ extended: false, limit: "50mb" }));
 
 app.get("/",(req,res)=>{
     res.send("TriNit team HAX backend")
+    console.log(process.env.COOKIE_EXP)
 })
 
 
 
 //routes 
 
-app.use("/api/donation",require("./routes/donation.route"));
+app.use("/donation",require("./routes/donation.route"));
+app.use("/event",require("./routes/event.route"));
+app.use("/user",require("./routes/auth.route"));
 
