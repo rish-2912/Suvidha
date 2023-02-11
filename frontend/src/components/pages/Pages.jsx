@@ -41,6 +41,9 @@ const Pages = () => {
         <Route exact path='/eventdetail' element={<EventDetail />} />
         <Route exact path='/morecategory' element={<DetailCategories />} />
         <Route exact path='/moreevent' element={<DetailEvents />} />
+
+        <Route exact path='/donatedetail/:id' element={<DonateDetail/>}/>
+          <Route exact path='/eventdetail/:id' element={<EventDetail/>}/>
         {/* <Route exact path='/about' component={About} />
        
           <Route exact path='/' element={<Landing/>} />
