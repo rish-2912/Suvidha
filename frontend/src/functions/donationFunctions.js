@@ -1,9 +1,9 @@
 import { BASE_URL } from "."
+import axios from "axios"
 
-
-const headers={
-    "Content-type":"application/json"
-}
+// const headers={
+//     "Content-type":"application/json"
+// }
 
 export const getAllDonations=async()=>{
     try {
@@ -45,7 +45,7 @@ export const CreateDonation =async(body)=>{
     
     try {
         
-        const response = axios.post(BASE_URL + "/donation/CreateDonation",body,{headers})
+        const response = axios.post(BASE_URL + "/donation/CreateDonation",body)
 
         return response
 
@@ -63,7 +63,7 @@ export const AddDonation =async(body)=>{
     
     try {
         
-        const response = axios.post(BASE_URL + "/donation/AddDonation" ,body,{headers})
+        const response = axios.post(BASE_URL + "/donation/AddDonation" ,body)
 
         return response
 
@@ -78,7 +78,7 @@ export const UpdateDonation =async(body)=>{
     // pass any argument in body to change
     try {
         
-        const response = axios.post(BASE_URL + "/donation/UpdateDonation",body,{headers})
+        const response = axios.post(BASE_URL + "/donation/UpdateDonation",body)
 
         return response
 

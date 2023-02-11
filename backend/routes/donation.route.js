@@ -5,7 +5,7 @@ const router = express.Router();
 router.get("/AllDonations",AllDonations)
 router.get("/MyDonations/:id",MyDonations)
 router.post("/CreateDonation",CreateDonation)
-router.post("/AddDonation",AddDonation)
+router.post("/AddDonation/:id",AddDonation)
 router.post("/UpdateDonation",UpdateDonation)
 
 

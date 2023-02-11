@@ -27,19 +27,21 @@ const DonationSchema = mongoose.Schema({
         type:mongoose.Schema.Types.ObjectId,
         ref:"user"
     },
+
     communities:[],
     completed:{
         type:Boolean,
         default:false
     },
-    hasEvent:{
-        type:Boolean,
-        default:false
-    },
-    Events:[{
+    donors:[{
         type:mongoose.Schema.Types.ObjectId,
-        ref:"event"
-    }]
+        ref:"user"
+    }],
+
+    category:{
+        type:String
+    },
+    image:String
     // donations:[]
 });
 
