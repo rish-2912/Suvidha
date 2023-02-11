@@ -16,6 +16,8 @@ import "./Signup.css";
 import { useAlert } from "react-alert";
 
 import { ERROR_CLEAR, SUCESS_MESSAGE_CLEAR } from "../../store/type/authType";
+import { AddUser } from "../Chat/chatFunctions";
+import { CHAT_SECRET } from "../../App";
 const Signup = () => {
 
 
@@ -78,7 +80,13 @@ const [loadImage,setLoadImage]=useState('')
 
     dispatch(userRegister(formData));
 
-   
+    const body={
+      "username":userName,
+      "email":email,
+      "secret":CHAT_SECRET
+    }
+
+    AddUser(body)
   }
 
   useEffect(()=>{
