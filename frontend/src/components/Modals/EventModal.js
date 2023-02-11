@@ -97,7 +97,7 @@ const EventModal = () => {
 
     return (
         <div>
-        <Button onClick={handleOpen}>Open modal</Button>
+       <Button style={{ color: 'black',fontWeight: 500}} onClick={handleOpen}>Create Donation</Button>
         <Modal
             open={open}
             onClose={handleClose}

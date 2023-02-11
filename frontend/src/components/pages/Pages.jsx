@@ -16,10 +16,17 @@ import Contact from "../contact/Contact"
 import Login from "../Login/Login"
 import Signup from "../Signup/Signup"
 import Landing from "../Landing/Landing";
-import EventDetail from "../EventDetail/EventDetail";
+
 import Navbar from "../Landing/Navbar";
+import DonateDetail from "../DonateDetail/DonateDetails";
+import EventDetail from "../EventDetail/EventDetail";
 
 const Pages = () => {
+
+ 
+
+
+
   return (
     <>
       <Navbar/>
@@ -27,9 +34,15 @@ const Pages = () => {
         {/* <Header /> */}
        
           <Route exact path='/' element={<Landing/>} />
+          
           <Route exact path='/login' element={<Login/>} />
           <Route exact path='/Signup' element={<Signup/>} />
-          <Route exact path='/eventdetail' element={<EventDetail/>}/>
+          <Route exact path='/donatedetail' element={<DonateDetail/>}/>
+          <Route exact path='/eventDetail' element={<EventDetail/>}/>
+
+
+
+
           {/* <Route exact path='/about' component={About} />
           
           <Route exact path='/blog' component={Blog} />
