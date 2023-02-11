@@ -9,8 +9,14 @@ const DonationSchema = mongoose.Schema({
         immutable:true
     },
     
-    targetAmount:Number,
-    donatedAmount:Number,
+    targetAmount:{
+        type:Number,
+        default:0
+    },
+    donatedAmount:{
+        type:Number,
+        default:0
+    },
 
     CreatedBy:{
         type:mongoose.Schema.Types.ObjectId,

@@ -24,7 +24,7 @@ exports.AllDonations=async(req,res)=>{
 exports.MyDonations=async(req,res)=>{
     try {
 
-        const donations = await Donation.findById(req.body._id)
+        const donations = await Donation.findOne({CreatedBy:req.params.id})
 
         return res.status(200).json({
             success:true,
@@ -58,7 +58,7 @@ exports.CreateDonation=async(req,res)=>{
         })
 
         await donation.save()
-        
+
         return res.status(200).json({
             success:true,
             data:"Donation created"
@@ -90,10 +90,12 @@ exports.AddDonation=async(req,res)=>{
             })
         }
 
-        if( donation.donatedAmount + Amount>= targetAmount){
+        if( donation.donatedAmount + Amount>= donation.targetAmount){
             donation.completed=true
         }
-        donation.donatedAmount+Amount
+        donation.donatedAmount += Amount
+
+        await donation.save()
 
         return res.status(200).json({
             success:true,
