@@ -16,16 +16,25 @@ import Contact from "../contact/Contact"
 import Login from "../Login/Login"
 import Signup from "../Signup/Signup"
 import Landing from "../Landing/Landing";
-import EventDetail from "../EventDetail/EventDetail";
+
 import Navbar from "../Landing/Navbar";
 import DetailCategories from "../categories/DetailCategories";
 import DetailEvents from "../events/DetailEvents";
+import DonateDetail from "../DonateDetail/DonateDetails";
+import EventDetail from "../EventDetail/EventDetail";
+
 const Pages = () => {
+
+
+
+
+
   return (
     <>
       <Navbar />
       <Routes>
         {/* <Header /> */}
+<<<<<<< HEAD
 
         <Route exact path='/' element={<Landing />} />
         <Route exact path='/login' element={<Login />} />
@@ -33,13 +42,27 @@ const Pages = () => {
         <Route exact path='/eventdetail' element={<EventDetail />} />
         <Route exact path='/morecategory' element={<DetailCategories />} />
         <Route exact path='/moreevent' element={<DetailEvents />} />
-        {/* <Route exact path='/about' component={About} />
+  {/* <Route exact path='/about' component={About} />
+=======
+       
+          <Route exact path='/' element={<Landing/>} />
+          
+          <Route exact path='/login' element={<Login/>} />
+          <Route exact path='/Signup' element={<Signup/>} />
+          <Route exact path='/donatedetail/:id' element={<DonateDetail/>}/>
+          <Route exact path='/eventDetail' element={<EventDetail/>}/>
+
+
+
+
+          {/* <Route exact path='/about' component={About} />
+>>>>>>> 49601c4ee27184c3aa2211bf8ff6c130c5fce547
           
           <Route exact path='/blog' component={Blog} />
           
           <Route exact path='/contact' component={Contact} /> */}
 
-      </Routes>
+      </Routes >
     </>
   )
 }

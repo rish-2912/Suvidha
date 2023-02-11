@@ -12,7 +12,7 @@ console.log(process.env.SECRET)
 
 const main=()=>{
     connectDB()
-    app.listen(5001,()=>{
+    app.listen(5000,()=>{
         console.log("Server started on port 5000")
     })
 }

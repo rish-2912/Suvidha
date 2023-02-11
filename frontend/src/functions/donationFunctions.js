@@ -8,7 +8,7 @@ import axios from "axios"
 export const getAllDonations=async()=>{
     try {
         
-        const response = await axios.post(BASE_URL+"/donation/AllDonations")
+        const response = await axios.get(BASE_URL+"/donation/AllDonations")
 
         return response
 

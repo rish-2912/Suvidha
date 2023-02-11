@@ -5,13 +5,16 @@ import jumbo from '../../assets/header3.png'
 const Head = styled(Box)(({ theme }) => ({
     height: '108vh',
     display: 'flex;',
-    justifyContent: 'center;',
-    alignItems: 'center;',
+    justifyContent: 'center',
+    alignItems: 'center',
+    // background: 'red',
+    cursor: "default"
 }))
+
 const Header = () => {
     return (
         <Head>
-            <img src={jumbo}></img>
+            <img src={jumbo} style={{ cursor: "default" }}></img>
         </Head>
     )
 }
