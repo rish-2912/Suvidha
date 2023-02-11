@@ -2,7 +2,8 @@ const express = require("express");
 const app = express();
 const cors = require("cors")
 const morgan = require("morgan");
-const connectDB = require("./connectDB");
+const connectDB = require("./connectDB"); 
+
 
 const main=()=>{
     connectDB()
@@ -16,6 +17,7 @@ main()
 
 app.use(morgan("dev"))
 app.use(cors())
+app.use(express.json({ extended: false, limit: "50mb" }));
 
 app.get("/",(req,res)=>{
     res.send("TriNit team HAX backend")
@@ -25,4 +27,4 @@ app.get("/",(req,res)=>{
 
 //routes 
 
-// app.use()
+app.use("/api/donation",require("./routes/donation.route"));
