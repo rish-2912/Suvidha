@@ -11,7 +11,7 @@ const NavButtons = styled(Button)(({ theme }) => ({
 }))
 const Navbar = () => {
     return (
-        <Box style={{ boxShadow: '0 5px 10px -10px', position: 'fixed', width: '100%', zIndex: '1000' }}>
+        <Box className='ok' style={{ boxShadow: '0 5px 10px -10px', position: 'fixed', width: '100%', zIndex: '1000', top: '0', background: 'white' }}>
             <Nav>
                 <Typography style={{ fontSize: '1.5rem' }}>FundMe</Typography>
                 <Box style={{ marginLeft: '10px' }}>

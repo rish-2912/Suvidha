@@ -19,6 +19,12 @@ const registerSchema=new Schema({
         required:true
     },
 
+    role:{
+        type:String,
+        required:true
+    },
+   
+
 },{timestamps:true});
 
 module.exports=model('user',registerSchema)
