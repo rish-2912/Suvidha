@@ -4,8 +4,13 @@ import { Box, Button, Typography } from '@mui/material'
 import React from 'react'
 import BasicTabs from './Event'
 import Items from './Items'
-
+import { useNavigate } from 'react-router-dom'
 const Events = () => {
+    const navigate = useNavigate()
+    const clickHandler = () => {
+        navigate('/moreevent')
+        window.scrollTo(0, 0);
+    }
     return (
         <div style={{ marginTop: '50px' }}>
             <Box style={{ maxWidth: '1140px', margin: 'auto' }}>
@@ -29,7 +34,7 @@ const Events = () => {
                     <Items />
                 </Box>
                 <Box style={{ maxWidth: '1140px', margin: 'auto', textAlign: 'center' }}>
-                    <Button variant='outlined' style={{ color: 'linear-gradient(45deg,orange,red)' }}>View More</Button>
+                    <Button variant='outlined' style={{ color: 'linear-gradient(45deg,orange,red)' }} onClick={clickHandler}>View More</Button>
                 </Box>
             </div>
 

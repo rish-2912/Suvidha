@@ -5,6 +5,15 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import PetsIcon from '@mui/icons-material/Pets';
+import LayersIcon from '@mui/icons-material/Layers';
+import ChildFriendlyIcon from '@mui/icons-material/ChildFriendly';
+import ElderlyIcon from '@mui/icons-material/Elderly';
+import AssistWalkerIcon from '@mui/icons-material/AssistWalker';
+import RestaurantIcon from '@mui/icons-material/Restaurant';
+import SchoolIcon from '@mui/icons-material/School';
+import WomanIcon from '@mui/icons-material/Woman';
+import MedicalServicesIcon from '@mui/icons-material/MedicalServices';
+import FloodIcon from '@mui/icons-material/Flood';
 import '../categories/category.css'
 const categories = [
     <Box style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '0 10px' }}>
@@ -12,41 +21,41 @@ const categories = [
         <Typography style={{ fontSize: '13px', fontFamily: 'Poppins', fontWeight: 'bold' }} >Animals</Typography>
     </Box>,
     <Box style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '0 10px' }}>
-        <PetsIcon style={{ fontSize: '18px' }} />
-        <Typography style={{ fontSize: '13px', fontFamily: 'Poppins', fontWeight: 'bold' }} >Animals</Typography>
+        <ChildFriendlyIcon style={{ fontSize: '18px' }} />
+        <Typography style={{ fontSize: '13px', fontFamily: 'Poppins', fontWeight: 'bold' }} >Children</Typography>
     </Box>,
     <Box style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '0 10px' }}>
-        <PetsIcon style={{ fontSize: '18px' }} />
-        <Typography style={{ fontSize: '13px', fontFamily: 'Poppins', fontWeight: 'bold' }} >Animals</Typography>
+        <ElderlyIcon style={{ fontSize: '18px' }} />
+        <Typography style={{ fontSize: '13px', fontFamily: 'Poppins', fontWeight: 'bold' }} >Elderly</Typography>
     </Box>,
     <Box style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '0 10px' }}>
-        <PetsIcon style={{ fontSize: '18px' }} />
-        <Typography style={{ fontSize: '13px', fontFamily: 'Poppins', fontWeight: 'bold' }} >Animals</Typography>
+        <AssistWalkerIcon style={{ fontSize: '18px' }} />
+        <Typography style={{ fontSize: '13px', fontFamily: 'Poppins', fontWeight: 'bold' }} >Disablility</Typography>
     </Box>,
     <Box style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '0 10px' }}>
-        <PetsIcon style={{ fontSize: '18px' }} />
-        <Typography style={{ fontSize: '13px', fontFamily: 'Poppins', fontWeight: 'bold' }} >Animals</Typography>
+        <RestaurantIcon style={{ fontSize: '18px' }} />
+        <Typography style={{ fontSize: '13px', fontFamily: 'Poppins', fontWeight: 'bold' }} >Hunger</Typography>
     </Box>,
     <Box style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '0 10px' }}>
-        <PetsIcon style={{ fontSize: '18px' }} />
-        <Typography style={{ fontSize: '13px', fontFamily: 'Poppins', fontWeight: 'bold' }} >Animals</Typography>
+        <WomanIcon style={{ fontSize: '18px' }} />
+        <Typography style={{ fontSize: '13px', fontFamily: 'Poppins', fontWeight: 'bold' }} >Women</Typography>
     </Box>,
     <Box style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '0 10px' }}>
-        <PetsIcon style={{ fontSize: '18px' }} />
-        <Typography style={{ fontSize: '13px', fontFamily: 'Poppins', fontWeight: 'bold' }} >Animals</Typography>
+        < SchoolIcon style={{ fontSize: '18px' }} />
+        <Typography style={{ fontSize: '13px', fontFamily: 'Poppins', fontWeight: 'bold' }} >Education</Typography>
     </Box>,
     <Box style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '0 10px' }}>
-        <PetsIcon style={{ fontSize: '18px' }} />
-        <Typography style={{ fontSize: '13px', fontFamily: 'Poppins', fontWeight: 'bold' }} >Animals</Typography>
+        <MedicalServicesIcon style={{ fontSize: '18px' }} />
+        <Typography style={{ fontSize: '13px', fontFamily: 'Poppins', fontWeight: 'bold' }} >Medical</Typography>
     </Box>,
     <Box style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '0 10px' }}>
-        <PetsIcon style={{ fontSize: '18px' }} />
-        <Typography style={{ fontSize: '13px', fontFamily: 'Poppins', fontWeight: 'bold' }} >Animals</Typography>
+        <FloodIcon style={{ fontSize: '18px' }} />
+        <Typography style={{ fontSize: '13px', fontFamily: 'Poppins', fontWeight: 'bold' }} >Disaster Relief</Typography>
     </Box>,
     <Box style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '0 10px' }}>
-        <PetsIcon style={{ fontSize: '18px' }} />
-        <Typography style={{ fontSize: '13px', fontFamily: 'Poppins', fontWeight: 'bold' }} >Animals</Typography>
-    </Box>
+        <LayersIcon style={{ fontSize: '18px' }} />
+        <Typography style={{ fontSize: '13px', fontFamily: 'Poppins', fontWeight: 'bold' }} >Other</Typography>
+    </Box>,
 ]
 function TabPanel(props) {
     const { children, value, index, ...other } = props;

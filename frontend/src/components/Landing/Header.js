@@ -7,7 +7,6 @@ const Head = styled(Box)(({ theme }) => ({
     display: 'flex;',
     justifyContent: 'center;',
     alignItems: 'center;',
-    background: 'red'
 }))
 const Header = () => {
     return (

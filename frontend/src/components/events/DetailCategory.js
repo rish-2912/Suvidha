@@ -14,8 +14,12 @@ import SchoolIcon from '@mui/icons-material/School';
 import WomanIcon from '@mui/icons-material/Woman';
 import MedicalServicesIcon from '@mui/icons-material/MedicalServices';
 import FloodIcon from '@mui/icons-material/Flood';
-import './category.css'
+// import './category.css'
 const categories = [
+    <Box style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '0 10px' }}>
+        <LayersIcon style={{ fontSize: '18px' }} />
+        <Typography style={{ fontSize: '13px', fontFamily: 'Poppins', fontWeight: 'bold' }} >All</Typography>
+    </Box>,
     <Box style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '0 10px' }}>
         <PetsIcon style={{ fontSize: '18px' }} />
         <Typography style={{ fontSize: '13px', fontFamily: 'Poppins', fontWeight: 'bold' }} >Animals</Typography>
@@ -51,11 +55,7 @@ const categories = [
     <Box style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '0 10px' }}>
         <FloodIcon style={{ fontSize: '18px' }} />
         <Typography style={{ fontSize: '13px', fontFamily: 'Poppins', fontWeight: 'bold' }} >Disaster Relief</Typography>
-    </Box>,
-    <Box style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '0 10px' }}>
-        <LayersIcon style={{ fontSize: '18px' }} />
-        <Typography style={{ fontSize: '13px', fontFamily: 'Poppins', fontWeight: 'bold' }} >Other</Typography>
-    </Box>,
+    </Box>
 ]
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
