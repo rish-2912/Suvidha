@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:wght@200;300;400;500;600;700&family=Roboto:ital,wght@0,400;0,500;1,400&display=swap');
+
+.footer {
+    background-color: hsl(30, 36%, 95%);
+
+}
+
+.apps {
+    font-family: 'Poppins', sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+    height: auto;
+    padding: 5rem 0;
+    flex-direction: column;
+}
+
+.app__about {
+    background: rgb(231, 255, 211);
+    background: linear-gradient(90deg, rgba(231, 255, 211, 1) 19%, rgba(252, 249, 247, 1) 90%);
+    height: 90vh;
+    width: 100%;
+    padding: 0 3rem;
+}
+
+.app__about h1 {
+    letter-spacing: 2px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #1d693a;
+}
+
+.about__mar {
+    margin-top: 2rem;
+}
+
+.app__about p {
+    letter-spacing: 1.5px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.app__contact {
+    margin-top: 4rem;
+    padding: 40px;
+    width: 100%;
+    box-shadow: 7px 7px 10px #747372;
+    background-color: white;
+}
+
+form div {
+    margin-bottom: 0.5rem;
+}
+
+.app__p {
+    margin-bottom: 0.5rem;
+}
+
+.footer {
+    border-top: 1px solid silver;
+    background-color: #eafaff;
+}
+
+.footer__content {
+    color: black;
+    padding: 75px 0;
+    display: flex;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer__links p {
+    padding-bottom: 12px;
+    letter-spacing: 1.25px;
+    font-weight: 600;
+}
+
+.footer__links ul li {
+    letter-spacing: 0.5px;
+    padding-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+.footer__mar {
+    margin-left: 4rem;
+}
+
+.footer__head {
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding-bottom: 12px;
+}
+
+.footer__address {
+    letter-spacing: 1.1px;
+    margin-bottom: 2rem;
+}
+
+.footer__content {
+    letter-spacing: 1.2px;
+}
+
+.footer__social p {
+    color: black;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+}
+
+.footer__social {
+    padding: 2rem 0;
+    width: fit-content;
+    margin: auto;
+    text-align: center;
+}
+
+.footer__social ul li a {
+    font-size: 2rem;
+    padding: 10px;
+    color: black;
+}
