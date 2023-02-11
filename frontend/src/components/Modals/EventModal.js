@@ -25,7 +25,7 @@ const style = {
 
 const EventModal = () => {
     
-    const { myinfo } = useSelector(state=>state.auth)
+    const { myInfo } = useSelector(state=>state.auth)
 
     const [state,setState]=useState({
         name:'',
@@ -72,6 +72,7 @@ const EventModal = () => {
     const handlesubmit =async ()=>{
         try {
             const formData = new FormData()
+            console.log(myInfo)
             formData.append("name",state.name)
             formData.append("description",state.description)
             formData.append("address",state.address)
@@ -79,7 +80,7 @@ const EventModal = () => {
             formData.append("image",state.image)
             formData.append("state",state.state)
             formData.append("city",state.city)
-            formData.append("user_id",myinfo._id)
+            formData.append("user_id",myInfo?.id)
 
             const response = await CreateEvent(formData)
 

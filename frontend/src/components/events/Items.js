@@ -73,10 +73,10 @@ const Items = () => {
         <>
             { items && items.map((item) => {
                 const percentage = `${((Number(item.raised)) / Number((+item.needed))) * 100}%`
-                console.log(percentage)
+                console.log(item.image)
                 return (
                     <Box style={{ w_idth: '31%', background: 'white', display: 'flex', flexDirection: 'column', alignItems: 'center', borderRadius: '8px', boxShadow: '0px 5px 10px -5px', marginBottom: '16px' }}>
-                        <image src={"http://localhost:3000/images/"+item.image} style={{ height: '200px' }} />
+                        <img src={"/images/"+ item.image} style={{ height: '200px' }} />
                         <Box style={{ padding: '20px' }}>
                             <Box>
                                 <Typography style={{ fontFamily: 'inherit', fontWeight: '600' }}>{item.name}</Typography>
