@@ -8,21 +8,25 @@ import About from "../about/About"
 import Blog from "../blog/Blog"
 
 import Contact from "../contact/Contact"
+import Login from "../Login/Login"
+import Signup from "../Signup/Signup"
 
 const Pages = () => {
   return (
     <>
       <Router>
-        <Header />
+        {/* <Header /> */}
         <Switch>
           <Route exact path='/' component={Home} />
-          <Route exact path='/about' component={About} />
+          <Route exact path='/login' component={Login} />
+          <Route exact path='/Signup' component={Signup} />
+          {/* <Route exact path='/about' component={About} />
           
           <Route exact path='/blog' component={Blog} />
           
-          <Route exact path='/contact' component={Contact} />
+          <Route exact path='/contact' component={Contact} /> */}
         </Switch>
-        <Footer />
+        {/* <Footer /> */}
       </Router>
     </>
   )
