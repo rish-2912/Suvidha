@@ -1,14 +1,14 @@
-const Donation = require("../models/donations.model")
+const Event = require("../models/event.model")
 
 
-exports.AllDonations=async(req,res)=>{
+exports.AllEvents=async(req,res)=>{
     try {
 
-        const donations = await Donation.find({})
+        const events = await Event.find({})
 
         return res.status(200).json({
             success:true,
-            data:donations
+            data:events
         })
 
 
@@ -21,14 +21,14 @@ exports.AllDonations=async(req,res)=>{
     }
 }
 
-exports.MyDonations=async(req,res)=>{
+exports.MyEvents=async(req,res)=>{
     try {
 
-        const donations = await Donation.find({CreatedBy:req.params.id})
+        const events = await Event.find({CreatedBy:req.params.id})
 
         return res.status(200).json({
             success:true,
-            data:donations
+            data:events
         })
 
 
@@ -41,31 +41,34 @@ exports.MyDonations=async(req,res)=>{
     }
 }
 
-exports.CreateDonation=async(req,res)=>{
+exports.CreateEvent=async(req,res)=>{
     try {
         const {
             name,
             description,
-            targetAmount,
+            address,
             user,
-            EventId,
-            hasEvent
+            Link,
+            StartDate,
+            EndDate
         } = req.body
 
-        const donation = new Donation({
+        const event = new Event({
             name,
             description,
-            targetAmount,
+            
+            address,
             CreatedBy:user._id,
-            EventId,
-            hasEvent
+            Link,
+            StartDate,
+            EndDate
         })
 
-        await donation.save()
+        await event.save()
 
         return res.status(200).json({
             success:true,
-            data:"Donation created"
+            data:"Event created"
         })
 
 
@@ -78,32 +81,31 @@ exports.CreateDonation=async(req,res)=>{
     }
 }
 
-exports.AddDonation=async(req,res)=>{
+exports.AttendEvent=async(req,res)=>{
     try {
         const {
-            Amount,
             _id
         } = req.body
 
-        const donation = await Donation.findById(_id)
+        const event = await Event.findById(req.params.id)
 
-        if(!donation){
+        if(!event){
             return res.status(400).json({
                 success:false,
-                error:"Donation not found"
+                error:"Event not found"
             })
         }
 
-        if( donation.donatedAmount + Amount>= donation.targetAmount){
-            donation.completed=true
+        if( !event.Attendees.includes(_id) ){
+            event.Attendees.push(_id)
         }
-        donation.donatedAmount += Amount
 
-        await donation.save()
+
+        await event.save()
 
         return res.status(200).json({
             success:true,
-            data:"Amount Donated"
+            data:event.Link
         })
 
 
@@ -116,17 +118,17 @@ exports.AddDonation=async(req,res)=>{
     }
 }
 
-exports.UpdateDonation=async(req,res)=>{
+exports.UpdateEvent=async(req,res)=>{
     try {
         const {
             _id
         } = req.body
 
-        const donation = await Donation.updateOne({_id},{$set:req.body})
+        const event = await Event.updateOne({_id},{$set:req.body})
 
         return res.status(200).json({
             success:true,
-            data:"Donation Edited"
+            data:"Event Edited"
         })
 
 

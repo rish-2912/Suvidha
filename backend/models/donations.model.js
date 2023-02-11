@@ -26,7 +26,15 @@ const DonationSchema = mongoose.Schema({
     completed:{
         type:Boolean,
         default:false
-    }
+    },
+    hasEvent:{
+        type:Boolean,
+        default:false
+    },
+    Events:[{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"event"
+    }]
     // donations:[]
 });
 
