@@ -9,6 +9,7 @@ import EventModal from '../Modals/EventModal'
 import Header from './Header'
 import Navbar from './Navbar'
 import Footer from '../footer/Footer'
+import Contact from '../contact/Contact'
 
 const Landing = () => {
 
@@ -30,6 +31,7 @@ const Landing = () => {
                 <Events />
                 {/* <Working /> */}
             </div>
+            {/* <Contact /> */}
             <Footer />
         </div>
     )

@@ -2,14 +2,20 @@ import ArrowForward from '@mui/icons-material/ArrowForward'
 import Search from '@mui/icons-material/Search'
 import { Box, Button, Typography } from '@mui/material'
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import BasicTabs from './Category'
 import Items from './Items'
 
 const Categories = () => {
+    const navigate = useNavigate()
+    const clickHandler = () => {
+        navigate('/morecategory')
+        window.scrollTo(0, 0);
+    }
     return (
         <div style={{ marginTop: '50px' }}>
             <Box style={{ maxWidth: '1140px', margin: 'auto' }}>
-                <Box style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <Box style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
                     <Box style={{ display: 'flex' }}>
                         <span style={{ height: '24px', width: '4px', background: 'rgb(69, 165, 255)' }}></span>
                         <Typography style={{ font: 'inherit', paddingLeft: '10px' }}>Categories</Typography>
@@ -29,7 +35,7 @@ const Categories = () => {
                     <Items />
                 </Box>
                 <Box style={{ maxWidth: '1140px', margin: 'auto', textAlign: 'center' }}>
-                    <Button variant='outlined' style={{ color: 'linear-gradient(45deg,orange,red)' }}>View More</Button>
+                    <Button variant='outlined' style={{ color: 'linear-gradient(45deg,orange,red)' }} onClick={clickHandler}>View More</Button>
                 </Box>
             </div>
 

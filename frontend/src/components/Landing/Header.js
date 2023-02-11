@@ -8,13 +8,13 @@ const Head = styled(Box)(({ theme }) => ({
     justifyContent: 'center',
     alignItems: 'center',
     // background: 'red',
-    cursor:"default"
+    cursor: "default"
 }))
 
 const Header = () => {
     return (
         <Head>
-            <img src={jumbo} style={{cursor:"default"}}></img>
+            <img src={jumbo} style={{ cursor: "default" }}></img>
         </Head>
     )
 }
