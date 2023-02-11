@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/ayush18023/TriNit/issues"
   },
-  "homepage": "https://github.com/ayush18023/TriNit#readme"
+  "homepage": "https://github.com/ayush18023/TriNit#readme",
+  "dependencies": {
+
+  }
 }
