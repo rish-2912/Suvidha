@@ -22,14 +22,11 @@ import DetailCategories from "../categories/DetailCategories";
 import DetailEvents from "../events/DetailEvents";
 import DonateDetail from "../DonateDetail/DonateDetails";
 import EventDetail from "../EventDetail/EventDetail";
-<<<<<<< HEAD
 import News from "../news/News";
 import NewsCard from "../news/NewsCard";
-=======
 import ChatFeed from "../Chat/ChatFeed";
 import { useSelector } from "react-redux";
 import { CHAT_SECRET } from "../../App";
->>>>>>> b9ef80e93bd9c8f11cc5767808f75166ed3f49fa
 
 const Pages = () => {
 
