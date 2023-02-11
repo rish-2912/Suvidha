@@ -9,6 +9,7 @@ import { CreateDonation } from '../../functions/donationFunctions';
 import { state_arr, s_a } from './stateandcity';
 import { CreateEvent } from '../../functions/eventFunctions';
 import { Toast } from '../Toast';
+import { useSelector } from 'react-redux';
 
 const style = {
     position: 'absolute',
@@ -24,6 +25,8 @@ const style = {
 
 const EventModal = () => {
     
+    const { myInfo } = useSelector(state=>state.auth)
+
     const [state,setState]=useState({
         name:'',
         description:'',
@@ -69,6 +72,7 @@ const EventModal = () => {
     const handlesubmit =async ()=>{
         try {
             const formData = new FormData()
+            console.log(myInfo)
             formData.append("name",state.name)
             formData.append("description",state.description)
             formData.append("address",state.address)
@@ -76,6 +80,7 @@ const EventModal = () => {
             formData.append("image",state.image)
             formData.append("state",state.state)
             formData.append("city",state.city)
+            formData.append("user_id",myInfo?.id)
 
             const response = await CreateEvent(formData)
 

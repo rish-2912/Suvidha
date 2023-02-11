@@ -17,11 +17,6 @@ const Landing = () => {
         <div>
             <Navbar />
           
-            {/* <div >
-                Donate
-            </div>
-            <DonationModal />
-            <EventModal /> */}
             <div style={{
                 marginTop: '46.5px'
             }}>
