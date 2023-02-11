@@ -5,7 +5,7 @@ const fs =require("fs")
 exports.AllEvents=async(req,res)=>{
     try {
 
-        const events = await Event.find({})
+        const events = await Event.find({}).populate("CreatedBy")
 
         return res.status(200).json({
             success:true,

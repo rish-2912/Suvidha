@@ -15,9 +15,9 @@ const Landing = () => {
     return (
         <div>
             <Navbar />
-            <div >
+            {/* <div >
                 Donate
-            </div>
+            </div> */}
             <DonationModal />
             <EventModal />
             <div style={{
