@@ -1,9 +1,11 @@
 const express = require("express");
 const app = express();
 const cors = require("cors")
-const morgan = require("morgan")
+const morgan = require("morgan");
+const connectDB = require("./connectDB");
 
 const main=()=>{
+    connectDB()
     app.listen(5000,()=>{
         console.log("Server started on port 5000")
     })
@@ -23,4 +25,4 @@ app.get("/",(req,res)=>{
 
 //routes 
 
-app.use()
+// app.use()
