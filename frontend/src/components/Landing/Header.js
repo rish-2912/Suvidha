@@ -1,6 +1,7 @@
 import React from 'react'
 import { Box, Button, Typography } from '@mui/material'
 import styled from '@emotion/styled'
+import jumbo from '../../assets/header3.png'
 const Head = styled(Box)(({ theme }) => ({
     height: '108vh',
     display: 'flex;',
@@ -10,7 +11,9 @@ const Head = styled(Box)(({ theme }) => ({
 }))
 const Header = () => {
     return (
-        <Head>Header</Head>
+        <Head>
+            <img src={jumbo}></img>
+        </Head>
     )
 }
 

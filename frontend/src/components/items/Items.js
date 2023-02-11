@@ -6,6 +6,8 @@ import Slider from "react-slick";
 import demo from "../../assets/demo.png"
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import Search from "./Search";
+import Carousel from 'react-material-ui-carousel'
+import { Paper } from '@mui/material'
 const arr = [
     {
         "id": "1",
@@ -56,8 +58,8 @@ export default class Items extends Component {
                                                 <Typography style={{ fontFamily: 'inherit', fontWeight: '600', paddingTop: '6px' }}>{item.title}</Typography>
                                                 <Typography style={{ color: 'rgba(17,17,17,.3) !important;', fontFamily: 'inherit', fontSize: '13px', padding: '6px 0' }}>{item.story}</Typography>
                                                 <Box style={{ display: 'flex' }}>
-                                                    <Button style={{ fontFamily: 'inherit', color: 'green', padding: '0', fontSize: '13px', fontWeight: 'bold', justifyContent: 'left' }}>Donate</Button>
-                                                    <ArrowForwardIcon style={{ fontSize: '14px', margin: 'auto 0', color: 'green' }} />
+                                                    <Button style={{ fontFamily: 'inherit', color: 'rgb(69, 165, 255)', padding: '0', fontSize: '13px', fontWeight: 'bold', justifyContent: 'left' }}>Donate<ArrowForwardIcon style={{ fontSize: '14px', margin: 'auto 0', color: 'rgb(69, 165, 255)' }} /></Button>
+
                                                 </Box>
                                             </Box>
 
@@ -71,3 +73,4 @@ export default class Items extends Component {
         );
     }
 }
+

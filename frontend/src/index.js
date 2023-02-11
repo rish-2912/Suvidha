@@ -7,7 +7,7 @@ import {
   BrowserRouter
 
 } from 'react-router-dom';
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import { positions, transitions, Provider as AlertProvider } from 'react-alert'
@@ -23,7 +23,7 @@ root.render(
   <Provider store={store}>
     <BrowserRouter>
       {/* <AlertProvider template={alertTemplate} {...options}> */}
-        <App />
+      <App />
 
       {/* </AlertProvider> */}
 
