@@ -1,5 +1,5 @@
 {
-  "name": "real-estate",
+  "name": "TriNit_Hax",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -24,6 +24,7 @@
     "react": "^18.2.0",
     "react-alert": "^7.0.3",
     "react-alert-template-basic": "^1.0.2",
+    "react-chat-engine": "^1.11.28",
     "react-circular-progressbar": "^2.1.0",
     "react-dom": "^18.1.0",
     "react-hot-toast": "^2.4.0",

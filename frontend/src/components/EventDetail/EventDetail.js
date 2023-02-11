@@ -8,13 +8,24 @@ import "../DonateDetail/Event.css";
 import Icon from "../DonateDetail/Icon";
 import { Button } from "@mui/material";
 import { Box } from "@mui/system";
-import { useParams } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 import { getAllEvents } from '../../functions/eventFunctions'
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import ChatMain from '../Chat/ChatMain';
+import { InitiateChat } from '../Chat/chatFunctions';
+import "../../App.css"
+import { useSelector } from 'react-redux';
+import { CHAT_SECRET } from '../../App';
+import axios from "axios"
+
 
 const EventDetail = () => {
     const { id } = useParams()
     const [item, setitem] = useState([])
+
+    const navigate = useNavigate()
+
+    const { myInfo } = useSelector(state=>state.auth)
 
     const fetchEvent=async()=>{
         const x = await getAllEvents()
@@ -25,10 +36,34 @@ const EventDetail = () => {
         }
     }
 
-
     useEffect(() => {
         fetchEvent()
     }, [])
+
+    const AddMemberToChat=async ()=>{
+      const headers={
+        'Project-ID': '24aa43c0-8d60-4618-af47-b82fbe6a820f', 
+        'User-Name': item.CreatedBy.userName, 
+        'User-Secret': CHAT_SECRET,
+      }
+      const body ={
+        "username": myInfo.userName
+      }
+      const response = await axios.post(`https://api.chatengine.io/chats/${item.Link}/people/`,body,{headers})
+      
+      console.log(response)
+
+    }
+
+    const handleChat = () =>{
+      if( myInfo.id !== item.CreatedBy ){
+        AddMemberToChat()
+      }
+      // if(!localStorage.getItem("chat_username")){
+      InitiateChat()
+      // }
+      navigate("/Chat")
+    }
 
 console.log(item)
 
@@ -75,6 +110,7 @@ console.log(item)
                 background:
                   "linear-gradient(to bottom right, #7C65D8, #20B9CC)",
               }}
+              onClick={()=>handleChat()}
             >
               Join Event
             </Button>
@@ -84,7 +120,7 @@ console.log(item)
 
           <div style={{ margin: "20px" }}>
             <Typography variant="h6" gutterBottom>
-             {item.Attendees.length}
+             {item && item.Attendees?.length}
             </Typography>
             <Typography variant="subtitle1" gutterBottom>
               Have already joined to volunteer

@@ -64,9 +64,9 @@ const Login=()=>{
                 <Button type='submit' color='primary' variant="contained" style={btnstyle} fullWidth>Sign in</Button>
                 </form>
                 <Typography > Do you have an account ?
-                     <Link href="/signup" >
+                    <Link href="/signup" >
                         Sign Up 
-                </Link>
+                    </Link>
                 </Typography>
             </Paper>
         </Grid>

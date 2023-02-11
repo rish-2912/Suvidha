@@ -10,6 +10,8 @@ import { state_arr, s_a } from './stateandcity';
 import { CreateEvent } from '../../functions/eventFunctions';
 import { Toast } from '../Toast';
 import { useSelector } from 'react-redux';
+import { CHAT_SECRET } from '../../App';
+import { CreateChat, GetLatestChat } from '../Chat/chatFunctions';
 
 const style = {
     position: 'absolute',
@@ -71,6 +73,23 @@ const EventModal = () => {
 
     const handlesubmit =async ()=>{
         try {
+
+            const body={
+                "title":state.name,
+                "is_direct_chat": false
+            }
+
+            const headers={
+                'Project-ID': '24aa43c0-8d60-4618-af47-b82fbe6a820f', 
+                'User-Name': myInfo.userName, 
+                'User-Secret': CHAT_SECRET,
+            }
+
+            await CreateChat(body,headers)
+
+            const latestchat = await GetLatestChat(headers)
+
+
             const formData = new FormData()
             console.log(myInfo)
             formData.append("name",state.name)
@@ -80,6 +99,7 @@ const EventModal = () => {
             formData.append("image",state.image)
             formData.append("state",state.state)
             formData.append("city",state.city)
+            formData.append("Link",latestchat.data[0].id)
             formData.append("user_id",myInfo?.id)
 
             const response = await CreateEvent(formData)
@@ -92,6 +112,9 @@ const EventModal = () => {
                     title: "Event Added",
                 });
                 handleClose()
+
+                
+        
             }
 
         } catch (error) {
