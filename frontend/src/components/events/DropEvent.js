@@ -6,7 +6,8 @@ import Fade from '@mui/material/Fade';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import './DropEvent.css'
-export default function FadeMenu() {
+import { state_arr } from '../Modals/stateandcity';
+export default function FadeMenu({handlebylocation}) {
     const [loc, setLoc] = React.useState('Location')
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
@@ -44,9 +45,11 @@ export default function FadeMenu() {
                 onClose={handleClose}
                 TransitionComponent={Fade}
             >
-                <MenuItem onClick={(e) => handleClose(e)} name='Maharashtra'>Maharashtra</MenuItem>
-                <MenuItem onClick={(e) => handleClose(e)} name='Bengal'>Bengal</MenuItem>
-                <MenuItem onClick={(e) => handleClose(e)} name='Gujrat'>Gujrat</MenuItem>
+                <MenuItem onClick={() => handlebylocation("All")}>All</MenuItem>
+                { state_arr.map(sa=>(
+
+                    <MenuItem onClick={() => handlebylocation(sa)} name='sa'>{sa}</MenuItem>
+                ))}
             </Menu>
         </div>
     );

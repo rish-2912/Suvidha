@@ -63,30 +63,19 @@ const items = [
 
 
 
-const DetailItems = () => {
+const DetailItems = ({ item }) => {
 
-    const [item, setitem] = useState([])
-    const fetchevents=async()=>{
-        const x = await getAllEvents()
-        if(x?.data?.success){
-            console.log(x)
-            setitem(x.data.data)
-        }
-    }
     
-    useEffect(() => {
-        fetchevents()
-    }, [])
     
 
 
     return (
         <>
-            {item.map((item) => {
+            {  item && item.map((item) => {
                 const percentage = `${((Number(item.raised)) / Number((+item.needed))) * 100}%`
                 console.log(percentage)
                 return (
-                    <Box style={{ w_idth: '31%', background: 'white', display: 'flex', flexDirection: 'column', alignItems: 'center', borderRadius: '8px', boxShadow: '0px 5px 10px -5px', marginBottom: '16px',  marginLeft: '20px',marginRight: '20px'  }}>
+                    <Box style={{ width: '31%', background: 'white', display: 'flex', flexDirection: 'column', alignItems: 'center', borderRadius: '8px', boxShadow: '0px 5px 10px -5px', marginBottom: '16px',  marginLeft: '20px',marginRight: '20px'  }}>
                         <img src={"/images/"+ item.image} style={{ height: '200px' }} />
                         <Box style={{ padding: '20px',width:"100%" }}>
                             <Box >

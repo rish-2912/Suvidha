@@ -13,10 +13,10 @@ const SearchIconWrapper = styled(Box)`
     color:black;
     
 `
-const Search = () => {
+const Search = ({handleChange}) => {
     return (
         <Box style={{ display: 'flex', marginTop: '6px' }}>
-            <InputSearchBase placeholder='Search for Products,brands and more' style={{ marginLeft: '2%' }} />
+            <InputSearchBase placeholder='Search for Events, Donations' style={{ marginLeft: '2%' }} onChange={handleChange}/>
             <SearchIconWrapper>
                 <SearchIcon style={{ paddingTop: '4.5px' }} />
             </SearchIconWrapper>
