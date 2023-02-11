@@ -27,5 +27,7 @@ app.get("/",(req,res)=>{
 
 //routes 
 
-app.use("/api/donation",require("./routes/donation.route"));
+app.use("/donation",require("./routes/donation.route"));
+app.use("/event",require("./routes/event.route"));
+app.use("/user",require("./routes/auth.route"));
 
