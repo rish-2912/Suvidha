@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { REGISTER_FAIL,REGISTER_SUCCESS,USER_LOGIN_FAIL,USER_LOGIN_SUCCESS } from '../types/authType';
+import { REGISTER_FAIL,REGISTER_SUCCESS,USER_LOGIN_FAIL,USER_LOGIN_SUCCESS } from '../type/authType';
 export const userRegister=(data)=>async(dispatch)=>{
   
    

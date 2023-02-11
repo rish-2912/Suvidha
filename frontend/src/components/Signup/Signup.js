@@ -1,4 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
+
+import { Link,useNavigate } from "react-router-dom";
+import {useDispatch,useSelector} from 'react-redux'
+import { userRegister } from "../../store/action/authAction";
 import {
   Grid,
   Paper,
@@ -10,10 +14,78 @@ import {
 } from "@material-ui/core";
 import "./Signup.css";
 const Signup = () => {
+
+
+    const navigate=useNavigate()
+// eslint-disable-next-line
+
+ 
+
+
+  const dispatch=useDispatch()
+
+
+  const [state,setState]=useState({
+    userName:'',
+    email:'',
+    password:'',
+    confirmPassword:'',
+    role:'',
+    image:'',
+   
+  })
+  
+const [loadImage,setLoadImage]=useState('')
+
+  const handleChange=(e)=>{
+    setState({
+      ...state,
+      [e.target.name]:e.target.value
+
+    })
+   
+  }
+
+  const fileHandle=(e)=>{
+    if(e.target.files.length!==0){
+      setState({
+        ...state,
+        [e.target.name]:e.target.files[0]
+      })
+    }
+    const reader=new FileReader();
+    reader.onload=()=>{
+      setLoadImage(reader.result)
+    }
+    reader.readAsDataURL(e.target.files[0]);
+   
+
+  }
+
+  const register= (e)=>{
+    const {userName,email,password,confirmPassword,image,role}=state
+    e.preventDefault();
+    const formData=new FormData();
+    formData.append('userName',userName);
+    formData.append('email',email);
+    formData.append('password',password);
+    formData.append('confirmPassword',confirmPassword);
+    formData.append('role',role)
+    formData.append('image',image);
+    console.log(formData)
+    // dispatch(userRegister(formData));
+
+   
+  }
+
+
+
+
+
   const paperStyle = { padding: "30px 20px", width: 500, margin: "20px auto" };
   const headerStyle = { margin: 0 };
   const avatarStyle = { backgroundColor: "#1bbd7e" };
-  const marginTop = { marginTop: 5 };
+
   const roles = [
     {
       value: "NGO",
@@ -33,46 +105,58 @@ const Signup = () => {
             Please fill this form to create an account !
           </Typography>
         </Grid>
-        <form>
-          <TextField
+        <form onSubmit={register}>
+          <TextField 
+          name="userName"
             size="small"
             className="form-field"
             fullWidth
             variant="outlined"
             label="Name"
             placeholder="Enter your name"
+            onChange={handleChange}
           />
           <TextField
+          name="email"
             size="small"
             className="form-field"
             fullWidth
             variant="outlined"
             label="Email"
             placeholder="Enter your email"
+            onChange={handleChange}
           />
 
           <TextField
+          name="password"
             size="small"
+            type="password"
             className="form-field"
             fullWidth
             variant="outlined"
             label="Password"
             placeholder="Enter your password"
+            onChange={handleChange}
           />
           <TextField
+          name="confirmPassword"
+          type="password"
             size="small"
             className="form-field"
             fullWidth
             variant="outlined"
             label="Confirm Password"
             placeholder="Confirm your password"
+            onChange={handleChange}
           />
-          <TextField
+          {/* <TextField
+          
             className="form-field"
             fullWidth
             id="outlined-select-roles"
             select
             label="Select Role"
+            onChange={handleChange}
            
           >
             {roles.map((option) => (
@@ -80,17 +164,35 @@ const Signup = () => {
                 {option.value}
               </MenuItem>
             ))}
-          </TextField>
+          </TextField> */}
+
+          <TextField
+          name="role"
+            size="small"
+            className="form-field"
+            fullWidth
+            variant="outlined"
+            label="role"
+            placeholder="Enter your role"
+            onChange={handleChange}
+          />
+
+
+
+
+
           <input
+          name="image"
         accept="image/*"
         type="file"
         id="select-image"
-        style={{ display: "none" }}
-       
+        style={{ display: "n" }}
+        onChange={fileHandle}
+        
         
       />
       <label htmlFor="select-image">
-        <Button className="form-field" variant="contained" color="primary" component="span">
+        <Button  className="form-field" variant="contained" color="primary" component="span">
           Upload Image
         </Button>
       </label>

@@ -10,7 +10,7 @@ module.exports.userRegister = (req, res) => {
   const form = formidable();
   
   form.parse(req, async (err, fields, files) => {
-    const { userName, email, password, confirmPassword } = fields;
+    const { userName, email, password, confirmPassword,role } = fields;
 
     const { image } = files;
 
@@ -74,7 +74,9 @@ module.exports.userRegister = (req, res) => {
                 userName,
                 email,
                 password: await bcrypt.hash(password, 10),
+               
                 image: files.image.originalFilename,
+                role,
               });
 
               const token = jwt.sign(
@@ -83,6 +85,7 @@ module.exports.userRegister = (req, res) => {
                   email: userCreate.email,
                   userName: userCreate.userName,
                   image: userCreate.image,
+                  role:userCreate.role,
                   registerTime: userCreate.createdAt,
                 },
                 process.env.SECRET,
@@ -153,6 +156,7 @@ module.exports.userLogin=async(req,res)=>{
                   email: checkUser.email,
                   userName: checkUser.userName,
                   image: checkUser.image,
+                  role:userCreate.role,
                   registerTime: checkUser.createdAt,
                 },
                 process.env.SECRET,
