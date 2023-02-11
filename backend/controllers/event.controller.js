@@ -1,5 +1,6 @@
 const Event = require("../models/event.model")
-
+const formidable = require("formidable");
+const fs =require("fs")
 
 exports.AllEvents=async(req,res)=>{
     try {
@@ -42,34 +43,60 @@ exports.MyEvents=async(req,res)=>{
 }
 
 exports.CreateEvent=async(req,res)=>{
+    const form = formidable();
     try {
-        const {
-            name,
-            description,
-            address,
-            user,
-            Link,
-            StartDate,
-            EndDate
-        } = req.body
+        form.parse(req, async (err, fields, files) => {
+            const {
+                name,
+                description,
+                address,
+                user_id,
+                Link,
+                StartDate,
+                EndDate,
+                state,
+                city,
+                category
+            } = fields
 
-        const event = new Event({
-            name,
-            description,
-            
-            address,
-            CreatedBy:user._id,
-            Link,
-            StartDate,
-            EndDate
+            const { image }=files
+            // console.log(image)
+
+            const getImageName = files.image.originalFilename;
+
+            const randomNumber = Math.floor(Math.random() * 9999);
+            const newImageName = randomNumber + getImageName;
+            files.image.originalFilename = newImageName;
+            const newPath =
+                __dirname +
+                `../../../frontend/public/images/${files.image.originalFilename}`;
+
+            fs.copyFile(files.image.filepath, newPath, async (error) => {
+                if(!error){
+                    const event = new Event({
+                        name,
+                        description,
+                        category,
+                        address,
+                        CreatedBy:user_id,
+                        Link,
+                        StartDate,
+                        EndDate,
+                        state,
+                        city,
+                        image:files.image.originalFilename
+                    })
+        
+                    await event.save()
+                    
+                    return res.status(200).json({
+                        success:true,
+                        data:"Event created"
+                    })
+                }
+            })
         })
 
-        await event.save()
-
-        return res.status(200).json({
-            success:true,
-            data:"Event created"
-        })
 
 
     } catch (error) {
