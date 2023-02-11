@@ -34,7 +34,6 @@ const Pages = () => {
       <Navbar />
       <Routes>
         {/* <Header /> */}
-<<<<<<< HEAD
 
         <Route exact path='/' element={<Landing />} />
         <Route exact path='/login' element={<Login />} />
@@ -42,8 +41,7 @@ const Pages = () => {
         <Route exact path='/eventdetail' element={<EventDetail />} />
         <Route exact path='/morecategory' element={<DetailCategories />} />
         <Route exact path='/moreevent' element={<DetailEvents />} />
-  {/* <Route exact path='/about' component={About} />
-=======
+        {/* <Route exact path='/about' component={About} />
        
           <Route exact path='/' element={<Landing/>} />
           
@@ -56,7 +54,6 @@ const Pages = () => {
 
 
           {/* <Route exact path='/about' component={About} />
->>>>>>> 49601c4ee27184c3aa2211bf8ff6c130c5fce547
           
           <Route exact path='/blog' component={Blog} />
           
