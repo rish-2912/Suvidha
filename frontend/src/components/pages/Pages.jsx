@@ -38,7 +38,7 @@ const Pages = () => {
           <Route exact path='/login' element={<Login/>} />
           <Route exact path='/Signup' element={<Signup/>} />
           <Route exact path='/donatedetail/:id' element={<DonateDetail/>}/>
-          <Route exact path='/eventDetail' element={<EventDetail/>}/>
+          <Route exact path='/eventdetail/:id' element={<EventDetail/>}/>
 
 
 
