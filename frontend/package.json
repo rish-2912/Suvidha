@@ -22,10 +22,7 @@
     "react": "^18.2.0",
     "react-alert": "^7.0.3",
     "react-alert-template-basic": "^1.0.2",
-<<<<<<< HEAD
     "react-circular-progressbar": "^2.1.0",
-=======
->>>>>>> 1aca84ffe806606091c47a6fefa5ac3fded66516
     "react-dom": "^18.1.0",
     "react-hot-toast": "^2.4.0",
     "react-material-ui-carousel": "^3.4.2",
