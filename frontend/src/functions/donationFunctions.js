@@ -60,10 +60,13 @@ export const AddDonation =async(body)=>{
     // pass arguments
     // Amount,
     // _id of donation
+    const {myid}=body
+    console.log(myid)
+    console.log(body)
     
     try {
         
-        const response = axios.post(BASE_URL + "/donation/AddDonation" ,body)
+        const response = axios.post(BASE_URL + `/donation/AddDonation/${myid}` ,body)
 
         return response
 

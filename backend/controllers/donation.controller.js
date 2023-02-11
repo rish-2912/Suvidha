@@ -102,7 +102,7 @@ exports.CreateDonation=async(req,res)=>{
 exports.AddDonation=async(req,res)=>{
     try {
         const {
-            Amount,
+            totalcost,
             _id
         } = req.body
 
@@ -115,10 +115,10 @@ exports.AddDonation=async(req,res)=>{
             })
         }
 
-        if( donation.donatedAmount + Amount>= donation.targetAmount){
+        if( donation.donatedAmount + totalcost>= donation.targetAmount){
             donation.completed=true
         }
-        donation.donatedAmount += Amount
+        donation.donatedAmount += totalcost
         if(!donation.donors.includes(req.params.id)){
             donation.donors.push(req.params.id)
         }

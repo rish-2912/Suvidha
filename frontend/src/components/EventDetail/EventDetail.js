@@ -103,6 +103,7 @@ console.log(item)
             style={{ display: "flex", marginBottom: "20px", marginTop: "20px" }}
           >
             <Button
+              fullWidth
               variant="contained"
               style={{
                 fontFamily: "inherit",
@@ -113,6 +114,22 @@ console.log(item)
               onClick={()=>handleChat()}
             >
               Join Event
+            </Button>
+           
+
+            <Button
+            fullWidth
+              variant="contained"
+              style={{
+                marginLeft:'30px',
+                fontFamily: "inherit",
+                width: "100%",
+                background:
+                  "linear-gradient(to bottom right, #7C65D8, #20B9CC)",
+              }}
+              href="https://meet.google.com/rbu-vdfi-puw"
+            >
+              Join Webinar
             </Button>
           </Box>
 <div style={{ display:'flex'}}>
