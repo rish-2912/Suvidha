@@ -8,6 +8,7 @@ import DonationModal from '../Modals/DonationModal'
 import EventModal from '../Modals/EventModal'
 import Header from './Header'
 import Navbar from './Navbar'
+import Footer from '../footer/Footer'
 
 const Landing = () => {
 
@@ -15,11 +16,7 @@ const Landing = () => {
     return (
         <div>
             <Navbar />
-            {/* <div >
-                Donate
-            </div> */}
-            <DonationModal />
-            <EventModal />
+          
             <div style={{
                 marginTop: '46.5px'
             }}>
@@ -30,8 +27,9 @@ const Landing = () => {
                 </div>
                 <Categories />
                 <Events />
-                <Working />
+                {/* <Working /> */}
             </div>
+            <Footer />
         </div>
     )
 }

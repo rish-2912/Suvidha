@@ -62,6 +62,13 @@ export const authReducer=(state=authState,action)=>{
         }
 
     }
+
+    if(type==='LOGOUT'){
+        return {
+            ...state,
+            state:payload.state
+        }
+    }
     if(type===SUCESS_MESSAGE_CLEAR){
         return {
             ...state,
@@ -74,6 +81,7 @@ export const authReducer=(state=authState,action)=>{
             error:''
         }
     }
+
 
 
 

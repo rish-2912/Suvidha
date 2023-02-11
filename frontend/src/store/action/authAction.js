@@ -31,6 +31,7 @@ export const userRegister=(data)=>async(dispatch)=>{
 
 export const userLogin=(data)=>async(dispatch)=>{
   
+  console.log(data)
    
   try{
 
@@ -40,8 +41,8 @@ export const userLogin=(data)=>async(dispatch)=>{
     dispatch({
      type:USER_LOGIN_SUCCESS,
      payload:{
-       successMessage:response.data.successMessage,
-       token:response.data.token
+       successMessage:response?.data?.successMessage,
+       token:response?.data?.token
      }
     })
     
@@ -49,7 +50,7 @@ export const userLogin=(data)=>async(dispatch)=>{
    dispatch({
      type:USER_LOGIN_FAIL,
      payload:{
-       error:error.response.data.error.errorMessage
+       error:error?.response?.data?.error?.errorMessage
      }
    })
 
