@@ -4,8 +4,18 @@ import Search from '../items/Search'
 import DetailCategory from './DetailCategory'
 import DetailItems from './DetailItems'
 import FadeMenu from './DropCat'
-import Items from './Items'
+
+
+
 const DetailCategories = () => {
+
+
+   
+
+ 
+
+
+
     return (
         <>
             <div style={{ width: '1140px', margin: 'auto', marginTop: '46.5px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '5rem', flexDirection: 'column' }}>

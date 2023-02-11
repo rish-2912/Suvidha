@@ -18,6 +18,7 @@ const Landing = () => {
         <div>
             <Navbar />
           
+       
             <div style={{
                 marginTop: '46.5px'
             }}>

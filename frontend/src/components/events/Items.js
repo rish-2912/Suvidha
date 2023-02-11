@@ -2,6 +2,8 @@ import { Box, Button, Typography } from '@mui/material'
 import React, { useState, useEffect } from 'react'
 import demo from '../../assets/demo.png'
 import { getAllEvents } from '../../functions/eventFunctions'
+
+import { Link } from 'react-router-dom'
 const items = [
     {
         "_id": '1',
@@ -87,7 +89,7 @@ const Items = () => {
                             </Box>
                             <Box style={{ display: 'flex', justifyContent: 'space-between', marginTop: '12px' }}>
                                 <Button variant='outlined' style={{ fontFamily: 'inherit', width: '49%' }}>Share</Button>
-                                <Button variant='contained' style={{ fontFamily: 'inherit', width: '49%', background: 'linear-gradient(to bottom right, #7C65D8, #20B9CC)' }}>Join</Button>
+                                <Link to={"eventdetail/" + item._id}> <Button variant='contained' style={{ fontFamily: 'inherit', width: '49%', background: 'linear-gradient(to bottom right, #7C65D8, #20B9CC)' }}>Join</Button></Link>
                             </Box>
                         </Box>
                     </Box>

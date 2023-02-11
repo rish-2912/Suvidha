@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState,useEffect} from 'react'
 import { Grid, Typography } from "@mui/material"; // Grid version 1
 import { CircularProgressbar } from "react-circular-progressbar";
 import Chip from "@mui/material/Chip";
@@ -8,27 +8,83 @@ import "../DonateDetail/Event.css";
 import Icon from "../DonateDetail/Icon";
 import { Button } from "@mui/material";
 import { Box } from "@mui/system";
+import { useNavigate, useParams } from 'react-router';
+import { getAllEvents } from '../../functions/eventFunctions'
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-const DonateDetail = ({}) => {
-  const percentage = 66;
+import ChatMain from '../Chat/ChatMain';
+import { InitiateChat } from '../Chat/chatFunctions';
+import "../../App.css"
+import { useSelector } from 'react-redux';
+import { CHAT_SECRET } from '../../App';
+import axios from "axios"
+
+
+const EventDetail = () => {
+    const { id } = useParams()
+    const [item, setitem] = useState([])
+
+    const navigate = useNavigate()
+
+    const { myInfo } = useSelector(state=>state.auth)
+
+    const fetchEvent=async()=>{
+        const x = await getAllEvents()
+        if(x?.data?.success){
+            console.log(x)
+            
+            setitem(x.data.data.find(x=>x._id===id))
+        }
+    }
+
+    useEffect(() => {
+        fetchEvent()
+    }, [])
+
+    const AddMemberToChat=async ()=>{
+      const headers={
+        'Project-ID': '24aa43c0-8d60-4618-af47-b82fbe6a820f', 
+        'User-Name': item.CreatedBy.userName, 
+        'User-Secret': CHAT_SECRET,
+      }
+      const body ={
+        "username": myInfo.userName
+      }
+      const response = await axios.post(`https://api.chatengine.io/chats/${item.Link}/people/`,body,{headers})
+      
+      console.log(response)
+
+    }
+
+    const handleChat = () =>{
+      if( myInfo.id !== item.CreatedBy ){
+        AddMemberToChat()
+      }
+      // if(!localStorage.getItem("chat_username")){
+      InitiateChat()
+      // }
+      navigate("/Chat")
+    }
+
+console.log(item)
+
   return (
     <div className="event-container">
       <Grid container spacing={2}>
         <Grid xs={8}>
-          <img src="/images/event1.png" className="event-image" />
+        <img src={"/images/"+item?.image} className="event-image"/>
         </Grid>
         <Grid xs={4}>
-          <Typography variant="h5" component="h5">
-            One Of The Deadliest Earthquakes Of The Century Has Destroyed
-            Turkey, Help Now
-          </Typography>
+        <Typography variant="h5" component="h5">
+        {item && item.name}
+ 
+        </Typography>
 
           <div className="event-tags">
             <Stack spacing={1} alignItems="start">
               <Stack direction="row" spacing={1}>
                 <Chip label="Tax benifit" color="success" />
                 <Chip label="Assured" color="success" />
-                <Chip label="children" color="success" />
+                <Chip label={item.category} color="success" />
               </Stack>
             </Stack>
           </div>
@@ -40,11 +96,7 @@ const DonateDetail = ({}) => {
           </div>
 
           <p>
-            Donatekart Foundation is requesting all of you to come forward and
-            help those affected by this disaster - a simple donation will go a
-            long way. The products you donate will be sent to the Turkish
-            Consulate in India and will then safely reach those in need. This is
-            your chance to save lives and make a difference.
+      {item.description}
           </p>
 
           <Box
@@ -58,6 +110,7 @@ const DonateDetail = ({}) => {
                 background:
                   "linear-gradient(to bottom right, #7C65D8, #20B9CC)",
               }}
+              onClick={()=>handleChat()}
             >
               Join Event
             </Button>
@@ -67,7 +120,7 @@ const DonateDetail = ({}) => {
 
           <div style={{ margin: "20px" }}>
             <Typography variant="h6" gutterBottom>
-              4,42,327
+             {item && item.Attendees?.length}
             </Typography>
             <Typography variant="subtitle1" gutterBottom>
               Have already joined to volunteer
@@ -82,4 +135,4 @@ const DonateDetail = ({}) => {
   );
 };
 
-export default DonateDetail;
+export default EventDetail;
