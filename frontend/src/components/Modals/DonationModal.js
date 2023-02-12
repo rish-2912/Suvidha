@@ -7,6 +7,7 @@ import { TextField  } from '@material-ui/core'
 import { Select, MenuItem } from "@mui/material";
 import { CreateDonation } from '../../functions/donationFunctions';
 import { Toast } from '../Toast';
+import { useSelector } from 'react-redux';
 
 const style = {
     position: 'absolute',
@@ -33,6 +34,9 @@ const DonationModal = () => {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+
+    const { myInfo } = useSelector(state=>state.auth) 
+
 
     const handleChange=(e)=>{
         setState({...state,
@@ -70,6 +74,7 @@ const DonationModal = () => {
             formData.append("targetAmount",state.targetAmount)
             formData.append("category",state.category)
             formData.append("image",state.image)
+            formData.append("user_id",myInfo?.id)
 
             const response = await CreateDonation(formData)
 

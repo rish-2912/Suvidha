@@ -5,7 +5,7 @@ const fs =require("fs")
 exports.AllDonations=async(req,res)=>{
     try {
 
-        const donations = await Donation.find({})
+        const donations = await Donation.find({}).populate("CreatedBy")
 
         return res.status(200).json({
             success:true,

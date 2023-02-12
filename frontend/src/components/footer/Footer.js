@@ -29,7 +29,7 @@ const Footer = () => {
                             <li><a href='#'><TwitterIcon /></a></li>
                             <li><a href='#'><WhatsAppIcon /></a></li>
                         </ul>
-                        <p>©2023 FundMe.</p>
+                        <p>©2023 Suvidha.</p>
                     </div>
                 </div>
             </div>

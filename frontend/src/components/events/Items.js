@@ -91,14 +91,14 @@ const Items = () => {
                         <Box style={{ padding: '20px', width: "100%" }}>
                             <Box >
                                 <Typography style={{ fontFamily: 'inherit', fontWeight: '600' }}>{item.name}</Typography>
-                                <Typography style={{ fontFamily: 'inherit', fontSize: '14px', color: 'rgba(0,0,0,.3)', marginTop: '12px' }}>{item.CreatedBy?.userName}</Typography>
+                                <Typography style={{ fontFamily: 'inherit', fontSize: '14px', color: 'rgba(0,0,0,.3)', marginTop: '12px' }}>Created By: {item.CreatedBy?.userName}</Typography>
                             </Box>
                             <Box style={{ marginTop: '12px' }}>
                                 <Typography style={{ fontFamily: 'inherit', textAlign: 'center', fontWeight: 'bold', fontSize: '15px' }}>{item.Attendees.length} Attendees</Typography>
                             </Box>
                             <Box style={{ display: 'flex', justifyContent: 'space-between', marginTop: '12px' }}>
                                 <Button variant='outlined' style={{ fontFamily: 'inherit', width: '49%' }}>Share</Button>
-                                <Link to={"eventdetail/" + item._id}> <Button variant='contained' style={{ fontFamily: 'inherit', width: '49%', background: 'linear-gradient(to bottom right, #7C65D8, #20B9CC)' }}>Join</Button></Link>
+                                <Link to={"eventdetail/" + item._id} style={{ fontFamily: 'inherit', width: '49%' }}> <Button variant='contained' style={{width:"100%", background: 'linear-gradient(to bottom right, #7C65D8, #20B9CC)'}}>Join</Button></Link>
                             </Box>
                         </Box>
                     </Box>

@@ -35,6 +35,7 @@ const Navbar = () => {
         e.preventDefault()
         localStorage.clear()
         dispatch({ type: 'LOGOUT', payload: state })
+        window.location.reload()
     }
     const navigate = useNavigate()
     const clickHandler = () => {
@@ -45,10 +46,13 @@ const Navbar = () => {
     return (
         <Box className='ok' style={{ boxShadow: '0 5px 10px -10px', position: 'fixed', width: '100%', zIndex: '1000', top: '0', background: 'white' }}>
             <Nav>
-                <Typography style={{ fontSize: '1.5rem', marginTop:'5px' }}>SUVIDHA</Typography>
+                <Typography style={{ fontSize: '1.5rem', marginTop:'5px' }}>
+                    <img src="/images/Suvidhaa_logo.png" alt="" style={{width:"100px"}} />
+                    {/* SUVIDHA */}
+                </Typography>
                 <Box style={{ marginLeft: '10px' }}>
                     {myInfo.role === 'ngo' ? <>
-                    <div style={{marginLeft:'200px',marginRight:'400px'}}>
+                    <div style={{marginLeft: "340px", marginRight: "297px",marginTop:"8px"}}>
 
                         <NavButtons><Link to='/'>     <Button style={{ color: 'black',fontWeight: 500}} >Home</Button></Link></NavButtons>
                         <NavButtons ><EventModal /></NavButtons>
@@ -63,7 +67,7 @@ const Navbar = () => {
 
 
                     </> : <>
-                    <div style={{marginLeft:'200px',marginRight:'400px'}}>
+                    <div style={{marginLeft:'400px',marginRight:'300px',marginTop:"8px"}}>
                         <NavButtons><Link to='/'><Button  style={{ color: 'black',fontWeight: 500}}>
             Home
           </Button></Link></NavButtons>

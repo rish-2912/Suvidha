@@ -18,13 +18,13 @@ const Checkout = ({totalcost,id}) => {
         description: '',
         image: 'https://cdn.razorpay.com/logos/7K3b6d18wHwKzL_medium.png',
         handler: function(response) {
-          
-            
+          window.location.reload()
+          console.log(response)
         },
         prefill: {
-          name: 'Gaurav',
-          contact: '9999999999',
-          email: 'demo@demo.com'
+          // name: 'Gaurav',
+          // contact: '9999999999',
+          // email: 'demo@demo.com'
         } ,
         notes: {
             address: 'some address'
