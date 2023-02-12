@@ -12,7 +12,7 @@ const Checkout = ({totalcost,id}) => {
   const {loading,authenticate,error,successMessage,myInfo}=useSelector(state=>state.auth) 
   const data={totalcost:totalcost/100,_id:id,myid:myInfo.id}
     const options = {
-        key: 'rzp_test_rEX2nh0cy0bFAi',
+        key: 'rzp_test_yHHzOUj82fzwPi',
         amount: totalcost, //  = INR 1
         name: 'Payment',
         description: '',
