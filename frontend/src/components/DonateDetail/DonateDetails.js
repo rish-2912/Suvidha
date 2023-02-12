@@ -157,10 +157,10 @@ const DonateDetail = () => {
         <Grid xs={8}>
             <Grid container spacing={2}>
               <Grid xs={6}>
-                <EventCard style={{margin:'20px'}} image={item4} name={EducationItems[0].title} cost={EducationItems[0].price} setTotal={setTotal} total={total}/>
+                <EventCard style={{margin:'20px'}} image='item4' name={EducationItems[0].title} cost={EducationItems[0].price} setTotal={setTotal} total={total}/>
               </Grid>
               <Grid xs={6}>
-                <EventCard style={{margin:'20px'}} image={item5} name={EducationItems[1].title} cost={EducationItems[1].price}setTotal={setTotal} total={total} />
+                <EventCard style={{margin:'20px'}} image='item5' name={EducationItems[1].title} cost={EducationItems[1].price}setTotal={setTotal} total={total} />
               </Grid>
              
             </Grid>
@@ -170,13 +170,13 @@ const DonateDetail = () => {
         <Grid xs={8}>
             <Grid container spacing={2}>
               <Grid xs={6}>
-                <EventCard style={{margin:'20px'}} image='/images/item1.png' name={donateItems[0].title} cost={donateItems[0].price} setTotal={setTotal} total={total}/>
+                <EventCard style={{margin:'20px'}} image='item1' name={donateItems[0].title} cost={donateItems[0].price} setTotal={setTotal} total={total}/>
               </Grid>
               <Grid xs={6}>
-                <EventCard style={{margin:'20px'}} image={item2} name={donateItems[1].title} cost={donateItems[1].price} total={total} />
+                <EventCard style={{margin:'20px'}} image='item2' name={donateItems[1].title} cost={donateItems[1].price} total={total} />
               </Grid>
               <Grid xs={6}>
-                <EventCard style={{margin:'20px'}} image={item3} name={donateItems[2].title} cost={donateItems[2].price} total={total} />
+                <EventCard style={{margin:'20px'}} image='item3' name={donateItems[2].title} cost={donateItems[2].price} total={total} />
               </Grid>
             </Grid>
           </Grid>
