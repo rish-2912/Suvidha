@@ -108,7 +108,7 @@ const [loadImage,setLoadImage]=useState('')
 
 
 
-  const paperStyle = { padding: "30px 20px", width: 500, margin: "20px auto" };
+  const paperStyle = { padding: "30px 20px", width: 500, margin: "100px auto" };
   const headerStyle = { margin: 0 };
   const avatarStyle = { backgroundColor: "#1bbd7e" };
 
@@ -212,13 +212,13 @@ const [loadImage,setLoadImage]=useState('')
         accept="image/*"
         type="file"
         id="select-image"
-        style={{ display: "n" }}
+        style={{ display: "none" }}
         onChange={fileHandle}
         
         
       />
       <label htmlFor="select-image">
-        <Button  className="form-field" variant="contained" color="primary" component="span">
+        <Button style={{display:'flex',justifyContent:"center"}}  className="form-field" variant="contained" color="primary" component="span">
           Upload Image
         </Button>
       </label>
@@ -228,7 +228,7 @@ const [loadImage,setLoadImage]=useState('')
 
 
 
-          <Button type="submit" variant="contained" color="primary">
+          <Button style={{display:'flex',justifyContent:"center" ,width:'100%'}} type="submit" variant="contained" color="primary">
             Sign up
           </Button>
         </form>

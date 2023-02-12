@@ -13,7 +13,12 @@ import Button from '@material-ui/core/Button';
 export default function EventCard({image,name,cost,setTotal,total}) {
   const theme = useTheme();
 
+  const [itemCount,setItemCount]=React.useState(0)
+ const handleClick=()=>{
+  setTotal(total+cost)
+  setItemCount(itemCount+1)
 
+ }
 
   return (
     <Card sx={{ display: 'flex' }}>
@@ -27,7 +32,10 @@ export default function EventCard({image,name,cost,setTotal,total}) {
           </Typography>
         </CardContent>
         <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
-        <Button onClick={()=>(setTotal(total+cost))} variant="outlined">Add+</Button>
+        <Button onClick={handleClick} variant="outlined">Add+</Button>
+        <Typography style={{marginLeft:'20px'}} component="div" variant="h5">
+          item Added:{itemCount}
+          </Typography>
         </Box>
       </Box>
       <CardMedia

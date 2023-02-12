@@ -47,7 +47,7 @@ const Login=()=>{
   // eslint-disable-next-line
   },[successMessage,error]) 
 
-    const paperStyle={padding :20,height:'70vh',width:500, margin:"30px auto"}
+    const paperStyle={padding :20,height:'70vh',width:500, margin:"100px auto"}
     const avatarStyle={backgroundColor:'#1bbd7e'}
     const btnstyle={margin:'8px 0'}
     return(
@@ -58,10 +58,10 @@ const Login=()=>{
                     <h2>Sign In</h2>
                 </Grid>
                 <form onSubmit={login}>
-                <TextField name="email" onChange={handleChange} className="form-field form-username" variant='outlined' label='Username' placeholder='Enter username' fullWidth required/>
+                <TextField name="email" onChange={handleChange} className="form-field form-username" variant='outlined' label='Email' placeholder='Enter email' fullWidth required/>
                 <TextField name="password" onChange={handleChange} className="form-field" variant='outlined' label='Password' placeholder='Enter password' type='password' fullWidth required/>
           
-                <Button type='submit' color='primary' variant="contained" style={btnstyle} fullWidth>Sign in</Button>
+                <Button type='submit' color='primary' variant="contained" style={btnstyle} fullWidth>Login</Button>
                 </form>
                 <Typography > Do you have an account ?
                     <Link href="/signup" >
