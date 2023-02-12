@@ -54,6 +54,9 @@ const items = [
         "category": 'animal'
     },
 ]
+
+
+
 const Items = () => {
 
     const [items, setitems] = useState([])
@@ -69,6 +72,12 @@ const Items = () => {
     useEffect(() => {
         fetchevents()
     }, [])
+
+    if(items.length>3)
+    {
+        setitems(items.slice(0,3))
+    }
+    
 
 
     return (

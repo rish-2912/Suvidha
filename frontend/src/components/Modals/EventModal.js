@@ -112,6 +112,7 @@ const EventModal = () => {
                     title: "Event Added",
                 });
                 handleClose()
+                window.location.reload();
 
                 
         

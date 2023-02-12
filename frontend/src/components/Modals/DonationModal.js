@@ -80,6 +80,7 @@ const DonationModal = () => {
                     title: "Donation Added",
                 });
                 handleClose()
+                window.location.reload();
             }
 
         } catch (error) {

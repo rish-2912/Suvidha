@@ -84,6 +84,11 @@ const Items = () => {
     useEffect(() => {
         fetchdonations()
     }, [])
+    if(items.length>3)
+    {
+        setitems(items.slice(0,3))
+    }
+    
     
     return (
         <>
