@@ -45,7 +45,7 @@ const Navbar = () => {
 
     return (
         <Box className='ok' style={{ boxShadow: '0 5px 10px -10px', position: 'fixed', width: '100%', zIndex: '1000', top: '0', background: 'white' }}>
-            <Nav>
+            <Nav style={{justifyContent:'center'}}>
                 <Typography style={{ fontSize: '1.5rem', marginTop:'5px' }}>
                     <img src="/images/Suvidhaa_logo.png" alt="" style={{width:"100px"}} />
                     {/* SUVIDHA */}
